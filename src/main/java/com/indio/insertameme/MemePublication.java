@@ -1,10 +1,13 @@
 package com.indio.insertameme;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -12,10 +15,11 @@ import javax.persistence.Table;
 @Table(name="memepublication")
 public class MemePublication {
 	
-	public MemePublication(String title, String imageUrl, String category) {
+	public MemePublication(String title, String imageUrl, String category, String memeText) {
 		this.title = title;
 		this.imageUrl = imageUrl;
 		this.category = category;
+		this.memeText = memeText;
 	}
 
 
@@ -65,8 +69,17 @@ public class MemePublication {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	public String getMemeText() {
+		return memeText;
+	}
 
 
+	public void setMemeText(String memeText) {
+		this.memeText = memeText;
+	}
+
+	
 
 
 	@Id
@@ -85,4 +98,8 @@ public class MemePublication {
 	
 	@Column(name="date")
 	private String date;
+	
+	@Column(name="memeText")
+	private String memeText;
+	
 }

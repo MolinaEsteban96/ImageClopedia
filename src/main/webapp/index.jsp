@@ -46,7 +46,7 @@
 		        		<div class="row">
 			        		<div class="col-md-12 form-group ">
 			        			<h4>Título</h4>
-			        			<form:input type="text" class="form-control" path="title" id="title" required="required"/>
+			        			<form:input type="text" maxlength="20" class="form-control" path="title" id="title" required="required"/>
 			        		</div>
 		        		</div>
 		        		<div class="row mt-3">
@@ -68,9 +68,17 @@
 		        					<form:option value="pol" label="Política"/>
 		        					<form:option value="spo" label="Deporte"/>
 		        					<form:option value="tec" label="Tecnología"/>
-		        					<form:option value="pai" label="paisaje"/>
+		        					<form:option value="pai" label="Paisaje"/>
 		        					<form:option value="ran" label="Random"/>
+		        					<form:option value="kit" label="Cocina"/>
+		        					<form:option value="mus" label="Musica"/>
 		        				</form:select>
+		        			</div>
+		        		</div>
+		        		<div class="row mt-3">
+		        			<div class="col-md-12 form-group">
+		        				<h4>Texto del Post</h4>
+		        				<form:textarea path="memeText" rows="5" cols="20" maxlength="500" class="form-control" id="memeText"/>
 		        			</div>
 		        		</div>		
 			        </div>
@@ -84,9 +92,11 @@
 		  </div>
 		</div>
 		<div v-for="meme in memes" class="d-inline-flex" id="memeWrapper">
-			<div class="text-center text-white">
-				<img :alt="meme.title" :src="meme.imageUrl" style="height:14rem;width:14rem;"/>
+			<div class="text-center text-white mx-1 my-1">
+				<a :href="meme.id" style="text-decoration:none;color:white;">
+				<img :alt="meme.title" :src="meme.imageUrl" style="height:14rem;width:16rem;"/>
 				<h5 class="card-title mt-2">{{meme.title}}</h5>
+				</a>
 			</div>	
 		</div>
 	</div>

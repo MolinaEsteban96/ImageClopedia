@@ -3,3 +3,19 @@
 	max-height:50%;
 	max-width:50%;
 }
+
+#postImage {
+	
+	background: #5a5a5a;
+}
+
+#postImage img {
+	
+	max-height: 50%;
+	max-width: 50%;
+}
+
+#commentWrapper {
+	
+	max-width: 100%;
+}
